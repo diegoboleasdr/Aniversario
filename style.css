@@ -1,0 +1,1431 @@
+/* ================================================== */
+/* GENERAL */
+/* ================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* ================================================== */
+/* PÁGINA A PANTALLA COMPLETA */
+/* ================================================== */
+
+.pagina {
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+
+/* ================================================== */
+/* ESCENA */
+/* ================================================== */
+
+.escena {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  /*
+    FONDO SUAVE Y DIFUMINADO
+  */
+
+  background:
+
+    /* Rosa más intenso en la derecha */
+    radial-gradient(
+      ellipse at 92% 50%,
+      rgba(223, 77, 101, 0.58) 0%,
+      rgba(235, 116, 128, 0.42) 24%,
+      rgba(244, 163, 166, 0.24) 45%,
+      rgba(250, 205, 196, 0.10) 63%,
+      transparent 78%
+    ),
+
+    /* Rosa suave entrando hacia el centro */
+    radial-gradient(
+      ellipse at 72% 52%,
+      rgba(247, 176, 177, 0.30) 0%,
+      rgba(250, 209, 199, 0.18) 40%,
+      transparent 70%
+    ),
+
+    /* Luz cálida en la parte izquierda */
+    radial-gradient(
+      ellipse at 15% 48%,
+      rgba(247, 238, 217, 0.95) 0%,
+      rgba(251, 243, 225, 0.72) 36%,
+      rgba(255, 248, 236, 0.25) 66%,
+      transparent 82%
+    ),
+
+    /* Base continua */
+    linear-gradient(
+      100deg,
+      #f7f2e7 0%,
+      #fff8ec 43%,
+      #fdf1e8 63%,
+      #f8d9d5 82%,
+      #efadb5 100%
+    );
+}
+
+
+/* ================================================== */
+/* CORAZONES DE FONDO */
+/* ================================================== */
+
+.corazones-fondo {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 6;
+}
+
+
+.corazon-ambiente {
+  position: absolute;
+
+  display: block;
+
+  line-height: 1;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-weight: 900;
+
+  color: var(--color);
+
+  opacity: var(--opacidad);
+
+  transform-origin: center;
+
+  user-select: none;
+
+  animation:
+    moverAmbiente
+    var(--duracion)
+    ease-in-out
+    var(--retraso)
+    infinite
+    alternate;
+}
+
+
+@keyframes moverAmbiente {
+
+  0% {
+    transform:
+      translate(0, 0)
+      rotate(var(--rotacion))
+      scale(0.96);
+  }
+
+  50% {
+    transform:
+      translate(
+        var(--movimiento-x),
+        var(--movimiento-y)
+      )
+      rotate(
+        calc(var(--rotacion) + 3deg)
+      )
+      scale(1);
+  }
+
+  100% {
+    transform:
+      translate(
+        calc(var(--movimiento-x) * -0.5),
+        calc(var(--movimiento-y) * -0.6)
+      )
+      rotate(
+        calc(var(--rotacion) - 3deg)
+      )
+      scale(1.035);
+  }
+
+}
+
+
+/* ================================================== */
+/* SAN VALENTÍN / TEXTO INICIAL */
+/* ================================================== */
+
+.san-valentin {
+  position: absolute;
+
+  left: 50%;
+  top: 49%;
+
+  display: flex;
+  align-items: flex-end;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.78);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 40;
+
+  transition:
+    opacity 220ms ease,
+    transform 270ms ease;
+}
+
+
+.san-valentin.visible {
+  opacity: 1;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+}
+
+
+.san-corazon {
+  color: #00aeb6;
+
+  font-size:
+    clamp(
+      38px,
+      3vw,
+      58px
+    );
+
+  line-height: 0.8;
+}
+
+
+.san-texto {
+  margin-left: 5px;
+
+  padding-bottom: 2px;
+
+  color: #008f96;
+
+  white-space: nowrap;
+
+  font-size:
+    clamp(
+      11px,
+      0.78vw,
+      15px
+    );
+
+  border-bottom:
+    1px solid
+    #008f96;
+}
+
+
+/* ================================================== */
+/* SEMILLA */
+/* ================================================== */
+
+.semilla {
+  position: absolute;
+
+  left: 50%;
+  top: 51%;
+
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+
+  background: #00aeb6;
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0);
+
+  z-index: 35;
+}
+
+
+.semilla.aparece {
+  opacity: 1;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  transition:
+    opacity 150ms ease,
+    transform 180ms ease;
+}
+
+
+.semilla.cae {
+  top: 82%;
+
+  transition:
+    top 360ms
+    cubic-bezier(
+      .42,
+      .01,
+      .72,
+      .48
+    );
+}
+
+
+/* ================================================== */
+/* SUELO */
+/* ================================================== */
+
+.suelo {
+  position: absolute;
+
+  left: 24%;
+
+  top: 82%;
+
+  width: 52%;
+  height: 2px;
+
+  background: #3e342f;
+
+  opacity: 0;
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    center;
+
+  z-index: 15;
+}
+
+
+.suelo.corta {
+  opacity: 1;
+
+  transform:
+    scaleX(0.12);
+}
+
+
+.suelo.completa {
+  opacity: 1;
+
+  transform:
+    scaleX(1);
+
+  transition:
+    transform
+    330ms
+    ease-out;
+}
+
+
+/* ================================================== */
+/* ÁRBOL */
+/* ================================================== */
+
+.zona-arbol {
+  position: absolute;
+
+  /*
+    AL PRINCIPIO ESTÁ CENTRADO
+  */
+
+  left: 50%;
+
+  bottom: 18%;
+
+  width:
+    clamp(
+      340px,
+      30vw,
+      575px
+    );
+
+  aspect-ratio:
+    260 / 280;
+
+  transform:
+    translateX(-50%);
+
+  transform-origin:
+    center bottom;
+
+  z-index: 18;
+
+  /*
+    CUANDO TERMINA,
+    SE DESPLAZA A LA DERECHA
+  */
+
+  transition:
+    left
+    850ms
+    cubic-bezier(
+      .22,
+      .75,
+      .3,
+      1
+    );
+}
+
+
+/* ÁRBOL A LA DERECHA */
+
+.zona-arbol.arbol-derecha {
+  left: 65%;
+}
+
+
+/* ================================================== */
+/* SVG */
+/* ================================================== */
+
+.estructura-arbol {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  z-index: 1;
+}
+
+
+/* ================================================== */
+/* TRONCO */
+/* ================================================== */
+
+.tronco-arbol {
+  fill: #985312;
+
+  transform-box: fill-box;
+
+  transform-origin:
+    center bottom;
+}
+
+
+/* ================================================== */
+/* RAMAS */
+/* ================================================== */
+
+.rama {
+  fill: none;
+
+  stroke: #914d0d;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+
+.rama-principal {
+  stroke-width: 3.1;
+}
+
+
+.rama-media {
+  stroke-width: 2.1;
+}
+
+
+.rama-fina {
+  stroke-width: 1.45;
+}
+
+
+.ramita {
+  stroke-width: 0.9;
+}
+
+
+/* ================================================== */
+/* ÁRBOL OCULTO */
+/* ================================================== */
+
+.arbol-oculto
+.tronco-arbol {
+  transform:
+    scaleY(0);
+}
+
+
+.arbol-oculto
+.rama {
+  stroke-dashoffset: 1;
+}
+
+
+/* ================================================== */
+/* CRECIMIENTO */
+/* ================================================== */
+
+.arbol-creciendo
+.tronco-arbol {
+  animation:
+    crecerTronco
+    390ms
+    cubic-bezier(
+      .19,
+      .78,
+      .34,
+      1
+    )
+    forwards;
+}
+
+
+@keyframes crecerTronco {
+
+  from {
+    transform:
+      scaleY(0);
+  }
+
+  to {
+    transform:
+      scaleY(1);
+  }
+
+}
+
+
+/* RAMAS */
+
+.arbol-creciendo
+.rama {
+  stroke-dashoffset: 1;
+
+  animation:
+    dibujarRama
+    360ms
+    ease-out
+    forwards;
+}
+
+
+@keyframes dibujarRama {
+
+  to {
+    stroke-dashoffset: 0;
+  }
+
+}
+
+
+.arbol-creciendo .rama-1 {
+  animation-delay: 230ms;
+}
+
+.arbol-creciendo .rama-2 {
+  animation-delay: 245ms;
+}
+
+.arbol-creciendo .rama-3 {
+  animation-delay: 295ms;
+}
+
+.arbol-creciendo .rama-4 {
+  animation-delay: 310ms;
+}
+
+.arbol-creciendo .rama-5 {
+  animation-delay: 350ms;
+}
+
+.arbol-creciendo .rama-6 {
+  animation-delay: 365ms;
+}
+
+.arbol-creciendo .rama-7 {
+  animation-delay: 380ms;
+}
+
+.arbol-creciendo .rama-8 {
+  animation-delay: 405ms;
+}
+
+.arbol-creciendo .rama-9 {
+  animation-delay: 420ms;
+}
+
+.arbol-creciendo .rama-10 {
+  animation-delay: 435ms;
+}
+
+.arbol-creciendo .rama-11 {
+  animation-delay: 415ms;
+}
+
+.arbol-creciendo .rama-12 {
+  animation-delay: 435ms;
+}
+
+.arbol-creciendo .rama-13 {
+  animation-delay: 450ms;
+}
+
+.arbol-creciendo .rama-14 {
+  animation-delay: 400ms;
+}
+
+.arbol-creciendo .rama-15 {
+  animation-delay: 425ms;
+}
+
+.arbol-creciendo .rama-16 {
+  animation-delay: 445ms;
+}
+
+.arbol-creciendo .rama-17 {
+  animation-delay: 455ms;
+}
+
+
+/* ================================================== */
+/* COPA */
+/* ================================================== */
+
+.copa {
+  position: absolute;
+
+  left: 5%;
+  top: 0;
+
+  width: 90%;
+  height: 74%;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+/* ================================================== */
+/* CORAZONES DEL ÁRBOL */
+/* ================================================== */
+
+.hoja {
+  position: absolute;
+
+  display: block;
+
+  line-height: 1;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-weight: 900;
+
+  color: var(--color);
+
+  opacity: 0;
+
+  transform-origin: center;
+
+  user-select: none;
+
+  will-change:
+    transform,
+    opacity;
+
+  filter:
+    drop-shadow(
+      0 0.5px 0.4px
+      rgba(160, 0, 25, 0.07)
+    );
+}
+
+
+/* ================================================== */
+/* NACIMIENTO DE LOS CORAZONES */
+/* ================================================== */
+
+.arbol-hojas
+.hoja {
+  animation:
+    aparecerHoja
+    560ms
+    cubic-bezier(
+      .16,
+      .81,
+      .3,
+      1.16
+    )
+    var(--delay)
+    forwards;
+}
+
+
+@keyframes aparecerHoja {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(
+        var(--inicio-x),
+        var(--inicio-y)
+      )
+      rotate(
+        calc(
+          var(--rotacion) - 15deg
+        )
+      )
+      scale(0.05);
+  }
+
+  70% {
+    opacity: var(--opacidad);
+
+    transform:
+      translate(0, -2px)
+      rotate(
+        calc(
+          var(--rotacion) + 4deg
+        )
+      )
+      scale(1.08);
+  }
+
+  100% {
+    opacity: var(--opacidad);
+
+    transform:
+      translate(0, 0)
+      rotate(var(--rotacion))
+      scale(1);
+  }
+
+}
+
+
+/* ================================================== */
+/* MOVIMIENTO FINAL DE LA COPA */
+/* ================================================== */
+
+.arbol-final
+.hoja {
+  opacity:
+    var(--opacidad);
+
+  animation:
+    respirarHoja
+    var(--duracion)
+    ease-in-out
+    var(--retraso)
+    infinite
+    alternate;
+}
+
+
+@keyframes respirarHoja {
+
+  0% {
+    transform:
+      translate(0, 0)
+      rotate(var(--rotacion))
+      scale(0.97);
+  }
+
+  50% {
+    transform:
+      translate(
+        var(--mover-x),
+        -1.8px
+      )
+      rotate(
+        calc(
+          var(--rotacion) + 2deg
+        )
+      )
+      scale(1);
+  }
+
+  100% {
+    transform:
+      translate(
+        calc(
+          var(--mover-x) * -0.7
+        ),
+        1px
+      )
+      rotate(
+        calc(
+          var(--rotacion) - 2deg
+        )
+      )
+      scale(1.035);
+  }
+
+}
+
+
+/* ================================================== */
+/* CORAZONES QUE SALEN DEL ÁRBOL */
+/* ================================================== */
+
+.petalo-volador {
+  position: absolute;
+
+  display: block;
+
+  pointer-events: none;
+
+  z-index: 30;
+
+  line-height: 1;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-weight: 900;
+
+  animation:
+    volarDesdeArbol
+    var(--tiempo)
+    cubic-bezier(
+      .28,
+      .53,
+      .44,
+      1
+    )
+    forwards;
+}
+
+
+@keyframes volarDesdeArbol {
+
+  0% {
+    opacity: 1;
+
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(1);
+  }
+
+  35% {
+    opacity: 0.95;
+
+    transform:
+      translate(
+        calc(
+          var(--destino-x) * 0.35
+        ),
+        calc(
+          var(--destino-y) * 0.25
+        )
+      )
+      rotate(-55deg)
+      scale(0.95);
+  }
+
+  70% {
+    opacity: 0.75;
+
+    transform:
+      translate(
+        calc(
+          var(--destino-x) * 0.7
+        ),
+        calc(
+          var(--destino-y) * 0.68
+        )
+      )
+      rotate(-125deg)
+      scale(0.8);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(
+        var(--destino-x),
+        var(--destino-y)
+      )
+      rotate(-220deg)
+      scale(0.55);
+  }
+
+}
+
+
+/* ================================================== */
+/* TEXTO */
+/* ================================================== */
+
+.texto {
+  position: absolute;
+
+  left: 27%;
+  top: 31%;
+
+  width: 22%;
+
+  max-width: 390px;
+
+  color: #504945;
+
+  font-size:
+    clamp(
+      14px,
+      1vw,
+      19px
+    );
+
+  line-height: 1.55;
+
+  opacity: 0;
+
+  z-index: 28;
+
+  transition:
+    opacity
+    230ms
+    ease;
+}
+
+
+.texto.visible {
+  opacity: 1;
+}
+
+
+.titulo {
+  min-height: 1.5em;
+
+  margin-bottom: 20px;
+}
+
+
+.frase {
+  min-height: 3em;
+
+  white-space: pre-line;
+}
+
+
+.frase-segunda {
+  margin-top: 14px;
+}
+
+
+.firma {
+  margin-top: 13px;
+
+  text-align: center;
+}
+
+
+/* CURSOR */
+
+.escribiendo::after {
+  content: "|";
+
+  margin-left: 1px;
+
+  opacity: 0.8;
+
+  animation:
+    cursor
+    600ms
+    steps(1)
+    infinite;
+}
+
+
+@keyframes cursor {
+
+  50% {
+    opacity: 0;
+  }
+
+}
+
+
+/* ================================================== */
+/* CONTADOR */
+/* ================================================== */
+
+.contador {
+  position: absolute;
+
+  left: 27%;
+
+  bottom: 19%;
+
+  color: #504843;
+
+  font-size:
+    clamp(
+      12px,
+      0.85vw,
+      16px
+    );
+
+  line-height: 1.35;
+
+  opacity: 0;
+
+  z-index: 27;
+
+  transition:
+    opacity
+    260ms
+    ease;
+}
+
+
+.contador.visible {
+  opacity: 1;
+}
+
+
+#contador {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 1.08em;
+}
+
+
+/* ================================================== */
+/* MÓVIL */
+/* ================================================== */
+
+@media
+(max-width: 700px)
+and
+(orientation: portrait) {
+
+  .escena {
+    width: 100vw;
+    height: 100svh;
+
+    background:
+
+      radial-gradient(
+        ellipse at 95% 55%,
+        rgba(224, 77, 100, 0.40),
+        rgba(243, 164, 166, 0.16) 50%,
+        transparent 74%
+      ),
+
+      #fff8ec;
+  }
+
+
+  .suelo {
+    left: 4%;
+
+    top: 84%;
+
+    width: 92%;
+  }
+
+
+  .semilla {
+    top: 52%;
+  }
+
+
+  .semilla.cae {
+    top: 84%;
+  }
+
+
+  .zona-arbol {
+    left: 50%;
+
+    bottom: 16%;
+
+    width:
+      min(
+        62vw,
+        290px
+      );
+  }
+
+
+  .zona-arbol.arbol-derecha {
+    left: 69%;
+  }
+
+
+  .texto {
+    left: 5%;
+    top: 21%;
+
+    width: 37%;
+
+    font-size:
+      clamp(
+        11px,
+        3.2vw,
+        14px
+      );
+
+    line-height: 1.5;
+  }
+
+
+  .titulo {
+    margin-bottom: 13px;
+  }
+
+
+  .frase {
+    min-height: 2.8em;
+  }
+
+
+  .frase-segunda {
+    margin-top: 9px;
+  }
+
+
+  .firma {
+    margin-top: 9px;
+  }
+
+
+  .contador {
+    left: 5%;
+
+    bottom: 17.5%;
+
+    width: 44%;
+
+    font-size:
+      clamp(
+        9px,
+        2.6vw,
+        12px
+      );
+  }
+
+
+  .san-valentin {
+    left: 50%;
+    top: 48%;
+  }
+
+}
+
+
+/* ================================================== */
+/* LLUVIA SUAVE DE CORAZONES EN LOS LATERALES */
+/* ================================================== */
+
+/*
+  IMPORTANTE:
+  ESTA PARTE ESTÁ FUERA DEL @media.
+
+  Por eso funciona tanto
+  en ordenador como en móvil.
+*/
+
+.corazon-lluvia {
+  position: absolute;
+
+  top: -30px;
+
+  display: block;
+
+  line-height: 1;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-weight: 900;
+
+  pointer-events: none;
+
+  z-index: 7;
+
+  color: var(--color);
+
+  opacity: var(--opacidad);
+
+  animation:
+    caerCorazonLateral
+    var(--tiempo)
+    linear
+    forwards;
+}
+
+
+@keyframes caerCorazonLateral {
+
+  0% {
+    transform:
+      translate(
+        0,
+        -30px
+      )
+      rotate(0deg);
+
+    opacity: 0;
+  }
+
+
+  8% {
+    opacity:
+      var(--opacidad);
+  }
+
+
+  45% {
+    transform:
+      translate(
+        var(--desvio),
+        45vh
+      )
+      rotate(100deg);
+  }
+
+
+  90% {
+    opacity:
+      var(--opacidad);
+  }
+
+
+  100% {
+    transform:
+      translate(
+        calc(
+          var(--desvio) * -0.4
+        ),
+        110vh
+      )
+      rotate(220deg);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* ================================================== */
+/* BOTÓN PARA ENTRAR A LA GALERÍA */
+/* ================================================== */
+
+.boton-galeria {
+  position: absolute;
+
+  left: 27%;
+  bottom: 11%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 11px 18px;
+
+  border: 1px solid rgba(0, 159, 167, 0.45);
+  border-radius: 30px;
+
+  color: #008f96;
+
+  background:
+    rgba(255, 255, 255, 0.35);
+
+  backdrop-filter: blur(5px);
+
+  text-decoration: none;
+
+  font-size:
+    clamp(
+      12px,
+      0.85vw,
+      16px
+    );
+
+  opacity: 0;
+
+  transform:
+    translateY(15px);
+
+  pointer-events: none;
+
+  z-index: 35;
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    background 0.3s ease;
+}
+
+
+.boton-galeria.visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  pointer-events: auto;
+}
+
+
+.boton-galeria span {
+  font-size: 1.25em;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.boton-galeria:hover {
+  background:
+    rgba(255, 255, 255, 0.65);
+}
+
+
+.boton-galeria:hover span {
+  transform:
+    translateX(5px);
+}
+
+
+/* ================================================== */
+/* AJUSTES FINALES MÓVIL                              */
+/* ================================================== */
+
+@media
+(max-width: 700px)
+and
+(orientation: portrait) {
+
+  .escena {
+    min-height: 100svh;
+  }
+
+
+  .texto {
+    left: 6%;
+    top: 18%;
+
+    width: 42%;
+
+    font-size:
+      clamp(
+        11px,
+        3.1vw,
+        14px
+      );
+  }
+
+
+  .zona-arbol {
+    bottom: 17%;
+
+    width:
+      min(
+        60vw,
+        280px
+      );
+  }
+
+
+  .zona-arbol.arbol-derecha {
+    left: 70%;
+  }
+
+
+  .contador {
+    left: 6%;
+
+    bottom: 18%;
+
+    width: 46%;
+  }
+
+
+  .boton-galeria {
+    left: 50%;
+    bottom: 7%;
+
+    padding: 10px 15px;
+
+    font-size: 12px;
+
+    transform:
+      translate(
+        -50%,
+        15px
+      );
+
+    white-space: nowrap;
+  }
+
+
+  .boton-galeria.visible {
+    transform:
+      translate(
+        -50%,
+        0
+      );
+  }
+
+
+  .san-valentin {
+    top: 46%;
+  }
+
+}

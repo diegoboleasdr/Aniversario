@@ -1,0 +1,834 @@
+/* ================================================== */
+/* CARTA FINAL                                        */
+/* ================================================== */
+
+.seccion-carta {
+    position: relative;
+
+    padding: 120px 20px 140px;
+
+    overflow: visible;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 50% 10%,
+            rgba(73, 218, 197, 0.10),
+            transparent 38%),
+        linear-gradient(180deg,
+            rgba(4, 18, 17, 0) 0%,
+            rgba(4, 18, 17, 0.58) 50%,
+            rgba(4, 18, 17, 0) 100%);
+}
+
+
+/* ================================================== */
+/* CABECERA                                           */
+/* ================================================== */
+
+.cabecera-carta {
+    width: min(820px, 100%);
+
+    margin: 0 auto 45px;
+}
+
+
+.mini-titulo-carta {
+    margin: 0 0 14px;
+
+    font-size: 0.78rem;
+
+    letter-spacing: 0.26em;
+
+    text-transform: uppercase;
+
+    color: rgba(109,
+            229,
+            211,
+            0.72);
+}
+
+
+.cabecera-carta h2 {
+    margin: 0;
+
+    font-size: clamp(2.2rem,
+            6vw,
+            4.8rem);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    color: #f4f0e8;
+}
+
+
+.cabecera-carta h2 span {
+    display: block;
+
+    color: #67dccb;
+
+    font-style: italic;
+}
+
+
+.descripcion-carta {
+    max-width: 620px;
+
+    margin: 20px auto 0;
+
+    color: rgba(244,
+            240,
+            232,
+            0.68);
+
+    line-height: 1.75;
+}
+
+
+/* ================================================== */
+/* ZONA DEL SOBRE                                     */
+/* ================================================== */
+
+.zona-sobre {
+    position: relative;
+
+    width: min(680px,
+            100%);
+
+    min-height: 520px;
+
+    transition: min-height 900ms ease;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    perspective: 1400px;
+}
+
+
+/* ================================================== */
+/* SOBRE                                              */
+/* ================================================== */
+
+.sobre-carta {
+    position: relative;
+
+    width: min(
+        430px,
+        90vw
+    );
+
+    height: 270px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: inherit;
+
+    font: inherit;
+
+    appearance: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 500ms ease,
+        opacity 400ms ease;
+
+    transform-style: preserve-3d;
+}
+
+
+.sobre-carta:hover {
+    transform: translateY(-5px);
+}
+
+
+.sobre-carta:focus-visible {
+    outline: 2px solid #68dfcf;
+
+    outline-offset: 10px;
+}
+
+
+/* ================================================== */
+/* CUERPO DEL SOBRE                                   */
+/* ================================================== */
+
+.sobre-base {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(115,
+            231,
+            214,
+            0.24);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(22,
+                58,
+                53,
+                0.97),
+            rgba(8,
+                28,
+                25,
+                0.98));
+
+    box-shadow:
+        0 30px 80px rgba(0,
+            0,
+            0,
+            0.36),
+        inset 0 0 45px rgba(86,
+            218,
+            198,
+            0.05);
+}
+
+
+.sobre-base::before,
+.sobre-base::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-style: solid;
+}
+
+
+.sobre-base::before {
+    left: 0;
+
+    border-width:
+        135px 0 0 215px;
+
+    border-color:
+        transparent transparent transparent rgba(47,
+            105,
+            95,
+            0.46);
+}
+
+
+.sobre-base::after {
+    right: 0;
+
+    border-width:
+        135px 215px 0 0;
+
+    border-color:
+        transparent rgba(40,
+            91,
+            83,
+            0.46) transparent transparent;
+}
+
+
+/* ================================================== */
+/* SOLAPA DEL SOBRE                                   */
+/* ================================================== */
+
+.solapa-sobre {
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    z-index: 4;
+
+    width: 100%;
+
+    height: 145px;
+
+    transform-origin: top center;
+
+    transition:
+        transform 700ms cubic-bezier(0.4,
+            0,
+            0.2,
+            1);
+
+    transform-style: preserve-3d;
+}
+
+
+.solapa-sobre::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    clip-path: polygon(0 0,
+            100% 0,
+            50% 100%);
+
+    background:
+        linear-gradient(180deg,
+            #193d38,
+            #102e2a);
+
+    border-top-left-radius: 18px;
+
+    border-top-right-radius: 18px;
+}
+
+
+/* ================================================== */
+/* TEXTO DEL SOBRE                                    */
+/* ================================================== */
+
+.contenido-sobre {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 6;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+
+.para-sayra {
+    margin: 0 0 8px;
+
+    color: #f4f0e8;
+
+    font-size: clamp(1.8rem,
+            5vw,
+            2.7rem);
+
+    font-weight: 500;
+}
+
+
+.corazon-amarillo-sobre {
+    color: #f4d85d;
+}
+
+
+.abrir-sobre-texto {
+    margin: 0;
+
+    color: rgba(244,
+            240,
+            232,
+            0.58);
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.03em;
+}
+
+
+/* ================================================== */
+/* SELLO                                              */
+/* ================================================== */
+
+.sello-carta {
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    z-index: 8;
+
+    display: grid;
+
+    place-items: center;
+
+    width: 54px;
+
+    height: 54px;
+
+    transform:
+        translate(-50%,
+            10px);
+
+    border: 1px solid rgba(255,
+            232,
+            117,
+            0.42);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            #f1d45d 0%,
+            #c6a943 70%);
+
+    color: #18342f;
+
+    font-size: 1.35rem;
+
+    box-shadow:
+        0 8px 22px rgba(0,
+            0,
+            0,
+            0.22);
+
+    transition:
+        transform 300ms ease,
+        opacity 300ms ease;
+}
+
+
+/* ================================================== */
+/* CARTA                                              */
+/* ================================================== */
+
+.papel-carta {
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    z-index: 3;
+
+    width: min(610px,
+            92vw);
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transform:
+        translate(-50%,
+            40px);
+
+    opacity: 0;
+
+    border: 1px solid rgba(124,
+            107,
+            71,
+            0.20);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(180deg,
+            #dffaf6,
+            #bfeee7);
+
+    box-shadow:
+        0 30px 90px rgba(0,
+            0,
+            0,
+            0.38);
+
+    transition:
+        transform 900ms cubic-bezier(0.22,
+            1,
+            0.36,
+            1),
+        opacity 600ms ease,
+        max-height 900ms ease;
+}
+
+
+.contenido-papel-carta {
+    padding:
+        54px 54px 48px;
+
+    text-align: left;
+}
+
+
+.titulo-papel {
+    margin: 0 0 30px;
+
+    color: #0f4f49;
+    font-size: clamp(2rem,
+            5vw,
+            3.1rem);
+
+    font-weight: 500;
+}
+
+
+.texto-carta {
+    margin: 0;
+
+    color: #173f3b;
+    font-size: 1rem;
+
+    line-height: 1.95;
+}
+
+
+.texto-carta p {
+    margin:
+        0 0 22px;
+}
+
+
+.texto-carta p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ================================================== */
+/* FIRMA                                              */
+/* ================================================== */
+
+.firma-carta {
+    margin-top: 36px;
+
+    text-align: right;
+}
+
+
+.firma-carta strong {
+    display: block;
+
+    color: #0f514b;
+    font-size: 1.25rem;
+
+    font-weight: 500;
+}
+
+
+.fecha-carta {
+    display: block;
+
+    margin-top: 5px;
+
+    color: rgba(62,
+            74,
+            70,
+            0.60);
+
+    font-size: 0.88rem;
+
+    letter-spacing: 0.08em;
+}
+
+
+.corazon-final-carta {
+    color: #e1bc31;
+}
+
+
+/* ================================================== */
+/* ESTADO ABIERTO                                     */
+/* ================================================== */
+.seccion-carta.abierta .zona-sobre {
+    min-height: 1450px;
+}
+
+.seccion-carta.abierta .solapa-sobre {
+    transform:
+        rotateX(180deg);
+}
+
+
+.seccion-carta.abierta .sello-carta {
+    transform:
+        translate(-50%,
+            -10px) scale(0.6);
+
+    opacity: 0;
+}
+
+
+.seccion-carta.abierta .contenido-sobre {
+    opacity: 0;
+
+    transition:
+        opacity 250ms ease;
+}
+
+
+.seccion-carta.abierta .papel-carta {
+    z-index: 10;
+
+    max-height: 1800px;
+
+    opacity: 1;
+
+    transform:
+        translate(-50%,
+            -120px);
+}
+
+
+.seccion-carta.abierta .sobre-carta {
+    transform:
+        translateY(160px);
+}
+
+
+/* ================================================== */
+/* CORAZONES AL ABRIR                                 */
+/* ================================================== */
+
+.corazon-carta-flotante {
+    position: absolute;
+
+    z-index: 30;
+
+    pointer-events: none;
+
+    color: #68dfcf;
+
+    font-size: 18px;
+
+    animation:
+        flotarCorazonCarta 2200ms ease-out forwards;
+}
+
+
+@keyframes flotarCorazonCarta {
+
+    0% {
+        transform:
+            translateY(0) scale(0.7);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-140px) scale(1.2);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* ================================================== */
+/* RESPONSIVE                                         */
+/* ================================================== */
+
+@media (max-width: 680px) {
+
+  .seccion-carta {
+    padding:
+      85px
+      12px
+      110px;
+  }
+
+
+  .cabecera-carta {
+    margin-bottom: 32px;
+  }
+
+
+  .cabecera-carta h2 {
+    font-size:
+      clamp(
+        40px,
+        12vw,
+        58px
+      );
+
+    line-height: 1;
+  }
+
+
+  .descripcion-carta {
+    max-width: 330px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+  }
+
+
+  .zona-sobre {
+    min-height: 430px;
+  }
+
+
+  .sobre-carta {
+    width: min(
+      360px,
+      92vw
+    );
+
+    height: 220px;
+  }
+
+
+  .solapa-sobre {
+    height: 116px;
+  }
+
+
+  .sobre-base::before {
+    border-width:
+      110px
+      0
+      0
+      46vw;
+  }
+
+
+  .sobre-base::after {
+    border-width:
+      110px
+      46vw
+      0
+      0;
+  }
+
+
+  .para-sayra {
+    font-size:
+      clamp(
+        1.6rem,
+        8vw,
+        2.2rem
+      );
+  }
+
+
+  .abrir-sobre-texto {
+    font-size: 0.82rem;
+  }
+
+
+  .sello-carta {
+    width: 48px;
+    height: 48px;
+
+    font-size: 1.2rem;
+  }
+
+
+  .papel-carta {
+    width: 94vw;
+
+    border-radius: 14px;
+  }
+
+
+  .contenido-papel-carta {
+    padding:
+      34px
+      20px
+      32px;
+  }
+
+
+  .titulo-papel {
+    margin-bottom: 24px;
+
+    font-size:
+      clamp(
+        1.9rem,
+        9vw,
+        2.6rem
+      );
+  }
+
+
+  .texto-carta {
+    font-size: 0.94rem;
+
+    line-height: 1.75;
+  }
+
+
+  .texto-carta p {
+    margin-bottom: 18px;
+  }
+
+
+  .firma-carta {
+    margin-top: 30px;
+  }
+
+
+  .firma-carta strong {
+    font-size: 1.15rem;
+  }
+
+
+  .fecha-carta {
+    font-size: 0.8rem;
+  }
+
+
+  .seccion-carta.abierta .zona-sobre {
+    min-height: 1750px;
+  }
+
+
+  .seccion-carta.abierta .papel-carta {
+    transform:
+      translate(
+        -50%,
+        -85px
+      );
+  }
+
+
+  .seccion-carta.abierta .sobre-carta {
+    transform:
+      translateY(
+        125px
+      );
+  }
+
+}
+
+
+/* ================================================== */
+/* REDUCIR MOVIMIENTO                                 */
+/* ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .sobre-carta,
+    .solapa-sobre,
+    .sello-carta,
+    .papel-carta {
+        transition: none;
+    }
+
+
+    .corazon-carta-flotante {
+        animation: none;
+    }
+
+}

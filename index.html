@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nuestro primer aniversario ❤️</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="musica.css">
+</head>
+
+
+<body>
+
+  <main class="pagina">
+
+    <section class="escena" id="escena">
+
+      <!-- CORAZONES DE ARRIBA Y ABAJO -->
+      <div id="corazonesFondo" class="corazones-fondo"></div>
+
+
+      <!-- SAN VALENTÍN -->
+      <div class="san-valentin" id="sanValentin">
+
+        <span class="san-corazon">
+          ♥
+        </span>
+
+        <span class="san-texto">
+          365 días contigo
+        </span>
+
+      </div>
+
+
+      <!-- SEMILLA -->
+      <div class="semilla" id="semilla"></div>
+
+
+      <!-- MENSAJE -->
+      <div class="texto" id="mensaje">
+
+        <p class="titulo" id="tituloMensaje"></p>
+
+        <p class="frase" id="frase1"></p>
+
+        <p class="frase frase-segunda" id="frase2"></p>
+
+        <p class="firma" id="firma"></p>
+
+      </div>
+
+
+      <!-- ÁRBOL -->
+      <div class="zona-arbol arbol-oculto" id="arbol">
+
+        <svg class="estructura-arbol" viewBox="0 0 260 280" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+
+          <!-- TRONCO -->
+          <path class="tronco-arbol" d="
+              M119 280
+
+              C121 258
+               123 238
+               124 218
+
+              C125 196
+               124 176
+               125 156
+
+              C126 137
+               128 118
+               129 98
+
+              C132 119
+               134 141
+               134 160
+
+              C134 180
+               135 200
+               136 220
+
+              C138 242
+               141 261
+               145 280
+
+              Z
+            " />
+
+
+          <!-- RAMAS PRINCIPALES -->
+
+          <path class="rama rama-principal rama-1" pathLength="1" d="
+              M128 180
+              C116 164 103 150 88 138
+              C75 128 63 122 50 118
+            " />
+
+          <path class="rama rama-principal rama-2" pathLength="1" d="
+              M132 175
+              C145 158 158 145 172 135
+              C185 126 197 119 210 115
+            " />
+
+
+          <!-- RAMAS MEDIAS -->
+
+          <path class="rama rama-media rama-3" pathLength="1" d="
+              M128 149
+              C116 134 104 122 91 112
+              C80 104 70 99 59 95
+            " />
+
+          <path class="rama rama-media rama-4" pathLength="1" d="
+              M131 144
+              C143 128 156 116 170 106
+              C181 98 192 93 203 90
+            " />
+
+
+          <!-- RAMAS SUPERIORES -->
+
+          <path class="rama rama-fina rama-5" pathLength="1" d="
+              M129 120
+              C119 107 111 96 104 84
+              C98 74 94 64 91 53
+            " />
+
+          <path class="rama rama-fina rama-6" pathLength="1" d="
+              M130 116
+              C128 101 127 87 128 73
+              C129 62 132 53 135 44
+            " />
+
+          <path class="rama rama-fina rama-7" pathLength="1" d="
+              M131 119
+              C141 105 151 94 162 84
+              C170 76 178 70 187 64
+            " />
+
+
+          <!-- RAMITAS -->
+
+          <path class="rama ramita rama-8" pathLength="1" d="
+              M91 112
+              C82 102 74 94 65 88
+            " />
+
+          <path class="rama ramita rama-9" pathLength="1" d="
+              M106 126
+              C101 113 99 102 98 90
+            " />
+
+          <path class="rama ramita rama-10" pathLength="1" d="
+              M105 84
+              C98 76 91 71 83 68
+            " />
+
+          <path class="rama ramita rama-11" pathLength="1" d="
+              M170 106
+              C180 96 189 90 199 86
+            " />
+
+          <path class="rama ramita rama-12" pathLength="1" d="
+              M154 100
+              C158 89 160 79 160 68
+            " />
+
+          <path class="rama ramita rama-13" pathLength="1" d="
+              M163 84
+              C171 75 179 69 188 65
+            " />
+
+
+          <!-- RAMAS EXTRA PARA DAR MÁS NATURALIDAD -->
+
+          <path class="rama ramita rama-14" pathLength="1" d="
+              M116 143
+              C106 134 97 128 86 124
+            " />
+
+          <path class="rama ramita rama-15" pathLength="1" d="
+              M145 130
+              C151 117 157 107 166 98
+            " />
+
+          <path class="rama ramita rama-16" pathLength="1" d="
+              M119 105
+              C113 94 109 84 108 74
+            " />
+
+          <path class="rama ramita rama-17" pathLength="1" d="
+              M178 125
+              C188 117 197 112 207 109
+            " />
+
+        </svg>
+
+
+        <!-- CORAZONES DEL ÁRBOL -->
+        <div id="copa" class="copa"></div>
+
+      </div>
+
+
+      <!-- CONTADOR -->
+      <div class="contador" id="zonaContador">
+
+        <p>
+          Mi amor por ti comenzó hace...
+        </p>
+
+        <span id="contador"></span>
+
+      </div>
+
+
+      <!-- BOTÓN GALERÍA -->
+      <a href="galeria.html" class="boton-galeria" id="botonGaleria">
+        Ver nuestros recuerdos
+        <span>→</span>
+      </a>
+
+      <!-- LÍNEA -->
+      <div class="suelo" id="suelo"></div>
+
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+
+  <script src="musica.js"></script>
+</body>
+
+</html>

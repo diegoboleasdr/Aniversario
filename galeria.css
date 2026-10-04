@@ -1,0 +1,1920 @@
+/* ================================================== */
+/* GENERAL */
+/* ================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  color: #f4eee2;
+
+  background: #07171a;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+/* ================================================== */
+/* MUSEO */
+/* ================================================== */
+
+.museo {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(ellipse at 50% 0%,
+      rgba(70, 224, 220, 0.08),
+      transparent 35%),
+    linear-gradient(180deg,
+      #09191d,
+      #071416);
+}
+
+
+/* ================================================== */
+/* VOLVER */
+/* ================================================== */
+
+.volver {
+  position: absolute;
+
+  left: 4vw;
+  top: 35px;
+
+  z-index: 20;
+
+  color: #69dadd;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+
+  letter-spacing: 0.04em;
+
+  text-decoration: none;
+
+  opacity: 0.8;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.volver:hover {
+  opacity: 1;
+
+  transform:
+    translateX(-5px);
+}
+
+
+/* ================================================== */
+/* PORTADA */
+/* ================================================== */
+
+.portada {
+  position: relative;
+
+  min-height: 88vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding:
+    120px 25px 100px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(ellipse at 50% -10%,
+      rgba(255, 235, 183, 0.16) 0%,
+      rgba(255, 235, 183, 0.04) 34%,
+      transparent 57%),
+
+    repeating-linear-gradient(90deg,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 90px),
+
+    linear-gradient(180deg,
+      #18363b,
+      #10282c);
+
+  border-bottom:
+    8px solid #07171a;
+
+  box-shadow:
+    inset 0 -35px 55px rgba(0, 0, 0, 0.28);
+}
+
+
+/* ================================================== */
+/* LUZ PORTADA */
+/* ================================================== */
+
+.luz-portada {
+  position: absolute;
+
+  top: -180px;
+  left: 50%;
+
+  width: 550px;
+  height: 500px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    radial-gradient(ellipse,
+      rgba(255, 239, 198, 0.20),
+      transparent 68%);
+
+  pointer-events: none;
+}
+
+
+/* ================================================== */
+/* TEXTOS PORTADA */
+/* ================================================== */
+
+.sobre-titulo {
+  position: relative;
+
+  margin-bottom: 20px;
+
+  color: #67d9dc;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.35em;
+}
+
+
+.portada h1 {
+  position: relative;
+
+  max-width: 900px;
+
+  font-size:
+    clamp(55px,
+      8vw,
+      120px);
+
+  line-height: 0.88;
+
+  font-weight: 400;
+
+  letter-spacing: -0.055em;
+}
+
+
+.portada h1 span {
+  display: block;
+
+  color: #78dedf;
+
+  font-style: italic;
+}
+
+
+.intro {
+  position: relative;
+
+  max-width: 500px;
+
+  margin-top: 32px;
+
+  color:
+    rgba(244,
+      238,
+      226,
+      0.68);
+
+  font-size:
+    clamp(15px,
+      1.2vw,
+      19px);
+
+  line-height: 1.7;
+}
+
+
+/* ================================================== */
+/* FLECHA */
+/* ================================================== */
+
+.bajar {
+  position: absolute;
+
+  bottom: 38px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color:
+    rgba(255,
+      255,
+      255,
+      0.45);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+}
+
+
+.bajar span {
+  color: #63dadd;
+
+  font-size: 20px;
+
+  animation:
+    bajarFlecha 1.8s ease-in-out infinite;
+}
+
+
+@keyframes bajarFlecha {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(7px);
+  }
+
+}
+
+
+/* ================================================== */
+/* RECORRIDO */
+/* ================================================== */
+
+.recorrido {
+  width: 100%;
+}
+
+
+/* ================================================== */
+/* SALA NORMAL */
+/* ================================================== */
+
+.sala {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 600px;
+
+  padding:
+    95px 8vw 130px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(ellipse at 25% -8%,
+      rgba(255, 236, 191, 0.13),
+      transparent 31%),
+
+    radial-gradient(ellipse at 75% -8%,
+      rgba(255, 236, 191, 0.10),
+      transparent 31%),
+
+    repeating-linear-gradient(90deg,
+      rgba(255, 255, 255, 0.014) 0px,
+      rgba(255, 255, 255, 0.014) 1px,
+      transparent 1px,
+      transparent 105px),
+
+    linear-gradient(180deg,
+      #18363b 0%,
+      #122e32 74%,
+      #10272b 100%);
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.035);
+
+  box-shadow:
+    inset 0 -35px 65px rgba(0, 0, 0, 0.24);
+}
+
+
+/* ================================================== */
+/* RODAPIÉ */
+/* ================================================== */
+
+.sala::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 20px;
+
+  background:
+    linear-gradient(180deg,
+      #493c31,
+      #271f1a);
+
+  box-shadow:
+    0 -4px 15px rgba(0, 0, 0, 0.28);
+}
+
+
+/* ================================================== */
+/* CABECERA DE SALA */
+/* ================================================== */
+
+.cabecera-sala {
+  max-width: 1100px;
+
+  margin:
+    0 auto 85px;
+
+  text-align: center;
+}
+
+
+.capitulo {
+  margin-bottom: 12px;
+
+  color: #61d6d9;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3em;
+}
+
+
+.titulo-sala {
+  margin-bottom: 15px;
+
+  font-size:
+    clamp(38px,
+      5vw,
+      72px);
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+
+.subtitulo-sala {
+  max-width: 570px;
+
+  margin: auto;
+
+  color:
+    rgba(244,
+      238,
+      226,
+      0.58);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* ================================================== */
+/* PARED NORMAL */
+/* ================================================== */
+
+.pared-obras {
+  width:
+    min(1200px,
+      100%);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,
+      minmax(0, 1fr));
+
+  gap:
+    115px 90px;
+
+  align-items: start;
+}
+
+
+/* ================================================== */
+/* OBRA */
+/* ================================================== */
+
+.obra {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 520px;
+
+  justify-self: center;
+}
+
+
+.obra.destacada {
+  grid-column:
+    1 / -1;
+
+  max-width: 720px;
+}
+
+
+/* ================================================== */
+/* FOCO */
+/* ================================================== */
+
+.obra::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: -100px;
+
+  width: 145%;
+  height: 250px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    radial-gradient(ellipse at center top,
+      rgba(255, 233, 184, 0.13),
+      transparent 67%);
+
+  pointer-events: none;
+}
+
+
+/* ================================================== */
+/* MARCO BASE */
+/* ================================================== */
+
+.marco {
+  position: relative;
+
+  width: 100%;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.marco::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 5px;
+
+  border:
+    1px solid rgba(227, 191, 110, 0.30);
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+.obra:hover .marco {
+  transform:
+    translateY(-6px);
+}
+
+
+/* ================================================== */
+/* MARCO 1 */
+/* ================================================== */
+
+.marco-1 {
+  padding: 12px;
+
+  background:
+    linear-gradient(135deg,
+      #8a603d,
+      #3e291b 25%,
+      #9a7048 48%,
+      #3b281b 73%,
+      #765033);
+
+  border:
+    3px solid #241810;
+
+  box-shadow:
+    0 26px 45px rgba(0, 0, 0, 0.42),
+
+    inset 0 0 0 2px rgba(224, 191, 116, 0.20);
+}
+
+
+/* ================================================== */
+/* MARCO 2 */
+/* ================================================== */
+
+.marco-2 {
+  padding: 15px;
+
+  background:
+    linear-gradient(135deg,
+      #725623,
+      #d4b25d 18%,
+      #81652a 38%,
+      #e3c977 52%,
+      #8e702e 72%,
+      #d1ae55);
+
+  border:
+    4px ridge #c09b48;
+
+  box-shadow:
+    0 28px 50px rgba(0, 0, 0, 0.48),
+
+    inset 0 0 0 3px rgba(255, 226, 150, 0.28);
+}
+
+
+/* ================================================== */
+/* MARCO 3 */
+/* ================================================== */
+
+.marco-3 {
+  padding: 8px;
+
+  background:
+    linear-gradient(145deg,
+      #363636,
+      #090909 40%,
+      #222222);
+
+  border:
+    2px solid #050505;
+
+  box-shadow:
+    0 25px 48px rgba(0, 0, 0, 0.52);
+}
+
+
+/* ================================================== */
+/* MARCO 4 */
+/* ================================================== */
+
+.marco-4 {
+  padding: 14px;
+
+  background:
+    repeating-linear-gradient(95deg,
+      #41261a 0px,
+      #41261a 7px,
+      #583426 8px,
+      #2c1811 14px);
+
+  border:
+    3px solid #1b100c;
+
+  box-shadow:
+    0 27px 50px rgba(0, 0, 0, 0.48);
+}
+
+
+/* ================================================== */
+/* MARCO 5 */
+/* ================================================== */
+
+.marco-5 {
+  padding: 10px;
+
+  background:
+    linear-gradient(135deg,
+      #054d52,
+      #158f95,
+      #073c40);
+
+  border:
+    3px solid #052e31;
+
+  box-shadow:
+    0 27px 50px rgba(0, 0, 0, 0.46),
+
+    inset 0 0 0 2px rgba(115, 228, 230, 0.30);
+}
+
+
+/* ================================================== */
+/* MARCO 6 */
+/* ================================================== */
+
+.marco-6 {
+  padding: 7px;
+
+  background:
+    linear-gradient(135deg,
+      #9c7a32,
+      #ead185,
+      #806120,
+      #d6b966);
+
+  border:
+    2px solid #c5a44d;
+
+  box-shadow:
+    0 25px 45px rgba(0, 0, 0, 0.42);
+}
+
+
+/* ================================================== */
+/* PASPARTÚ */
+/* ================================================== */
+
+.paspartu {
+  position: relative;
+
+  width: 100%;
+
+  padding: 18px;
+
+  background: #dfd7c7;
+
+  box-shadow:
+    inset 0 0 18px rgba(62, 49, 36, 0.22);
+}
+
+
+.marco-1 .paspartu {
+  background: #e7dfcf;
+}
+
+
+.marco-2 .paspartu {
+  background: #eee8db;
+}
+
+
+.marco-3 .paspartu {
+  background: #d8d5ce;
+}
+
+
+.marco-4 .paspartu {
+  background: #e2d5c2;
+}
+
+
+.marco-5 .paspartu {
+  background: #e4eeee;
+}
+
+
+.marco-6 .paspartu {
+  background: #eee5d1;
+}
+
+
+/* ================================================== */
+/* FOTO / VÍDEO */
+/* ================================================== */
+
+.media-contenedor {
+  width: 100%;
+
+  height:
+    clamp(330px,
+      40vw,
+      520px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #111313;
+
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+
+.destacada .media-contenedor {
+  height:
+    clamp(400px,
+      52vw,
+      650px);
+}
+
+
+.media-contenedor img,
+.media-contenedor video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  background: #0b0d0d;
+}
+
+
+/* ================================================== */
+/* FICHA */
+/* ================================================== */
+
+.ficha {
+  position: relative;
+
+  width:
+    min(410px,
+      88%);
+
+  margin:
+    25px auto 0;
+
+  padding:
+    17px 19px 18px;
+
+  color: #073c3a;
+
+  background:
+    linear-gradient(180deg,
+      #8ffdf5,
+      #52eee4);
+
+  border:
+    1px solid rgba(0, 120, 112, 0.28);
+
+  box-shadow:
+    0 7px 18px rgba(0, 0, 0, 0.27);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+.ficha-superior {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 10px;
+}
+
+
+.numero-obra {
+  color: #006b66;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+
+.fecha-obra {
+
+  color: #235b57;
+
+  font-size: 9px;
+
+  letter-spacing: 0.1em;
+
+  text-align: right;
+
+  text-transform: uppercase;
+}
+
+
+.nombre-obra {
+  margin-bottom: 7px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 22px;
+
+  font-weight: 400;
+}
+
+
+.descripcion-obra {
+
+  color: #214b47;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+
+/* ================================================== */
+/* HITO 10 · 10 · 2025 */
+/* ================================================== */
+
+.hito {
+  position: relative;
+
+  min-height: 75vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding:
+    100px 25px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(ellipse at 50% 20%,
+      rgba(87, 221, 222, 0.18),
+      transparent 35%),
+
+    radial-gradient(ellipse at 50% 60%,
+      rgba(255, 232, 181, 0.09),
+      transparent 45%),
+
+    linear-gradient(180deg,
+      #0c2024,
+      #091719);
+}
+
+
+.hito::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 1px;
+  height: 25%;
+
+  background:
+    linear-gradient(transparent,
+      rgba(89, 217, 220, 0.6));
+}
+
+
+.hito-contenido {
+  position: relative;
+
+  max-width: 760px;
+}
+
+
+.hito-corazon {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #42ced2;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 32px;
+}
+
+
+.hito-fecha {
+  margin-bottom: 20px;
+
+  color: #69dbde;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(16px,
+      2vw,
+      24px);
+
+  letter-spacing: 0.32em;
+}
+
+
+.hito h2 {
+  margin-bottom: 20px;
+
+  font-size:
+    clamp(45px,
+      7vw,
+      95px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+}
+
+
+.hito p {
+  max-width: 510px;
+
+  margin: auto;
+
+  color:
+    rgba(244,
+      238,
+      226,
+      0.65);
+
+  font-size:
+    clamp(15px,
+      1.4vw,
+      20px);
+
+  line-height: 1.7;
+}
+
+
+/* ================================================== */
+/* ERROR */
+/* ================================================== */
+
+.error-media {
+  padding: 30px;
+
+  color: #333;
+
+  background: #ddd3c1;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  text-align: center;
+
+  line-height: 1.5;
+}
+
+
+/* ================================================== */
+/* ================================================== */
+/* SALA ESPECIAL - FOTOS GRACIOSAS */
+/* ================================================== */
+/* ================================================== */
+
+
+/*
+  Aquí dejamos de usar el aspecto
+  formal del museo.
+
+  Esta sala parece una pared
+  de recuerdos / scrapbook.
+*/
+
+.sala-graciosa {
+  padding:
+    110px 7vw 160px;
+
+  color: #2f3535;
+
+  background:
+    radial-gradient(circle at 15% 12%,
+      rgba(68, 201, 205, 0.20),
+      transparent 27%),
+
+    radial-gradient(circle at 84% 28%,
+      rgba(247, 186, 198, 0.22),
+      transparent 30%),
+
+    radial-gradient(circle at 24% 75%,
+      rgba(244, 213, 139, 0.22),
+      transparent 28%),
+
+    repeating-linear-gradient(0deg,
+      rgba(60, 53, 44, 0.028) 0px,
+      rgba(60, 53, 44, 0.028) 1px,
+      transparent 1px,
+      transparent 5px),
+
+    linear-gradient(135deg,
+      #eee7d8,
+      #f7f0e4 45%,
+      #ebe3d4);
+
+  box-shadow:
+    inset 0 30px 70px rgba(65, 48, 32, 0.10);
+}
+
+
+/* Rodapié sala graciosa */
+
+.sala-graciosa::after {
+  height: 28px;
+
+  background:
+    linear-gradient(180deg,
+      #b89976,
+      #76583d);
+}
+
+
+/* ================================================== */
+/* CABECERA SALA GRACIOSA */
+/* ================================================== */
+
+.sala-graciosa .capitulo {
+  color: #008f96;
+}
+
+
+.sala-graciosa .titulo-sala {
+  color: #243638;
+
+  font-style: italic;
+}
+
+
+.sala-graciosa .subtitulo-sala {
+  max-width: 650px;
+
+  color:
+    rgba(42,
+      51,
+      51,
+      0.70);
+
+  font-size: 16px;
+}
+
+
+/* ================================================== */
+/* PARED GRACIOSA */
+/* ================================================== */
+
+.pared-graciosa {
+  position: relative;
+
+  max-width: 1250px;
+
+  grid-template-columns:
+    repeat(3,
+      minmax(0, 1fr));
+
+  gap:
+    85px 65px;
+
+  align-items: center;
+
+  padding:
+    45px 10px;
+}
+
+
+/* ================================================== */
+/* OBRAS GRACIOSAS */
+/* ================================================== */
+
+.pared-graciosa .obra-graciosa,
+.pared-graciosa .obra-graciosa.destacada {
+  grid-column: auto;
+
+  width: 100%;
+
+  max-width: 340px;
+
+  justify-self: center;
+
+  transform-origin:
+    center center;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+/*
+  Quitamos el foco del museo
+  de estas fotos.
+*/
+
+.obra-graciosa::before {
+  display: none;
+}
+
+
+/* ================================================== */
+/* POSICIONES IRREGULARES */
+/* ================================================== */
+
+.pared-graciosa .obra-graciosa:nth-child(6n + 1) {
+  transform:
+    rotate(-4deg) translateY(12px);
+}
+
+
+.pared-graciosa .obra-graciosa:nth-child(6n + 2) {
+  transform:
+    rotate(3deg) translateY(-22px);
+}
+
+
+.pared-graciosa .obra-graciosa:nth-child(6n + 3) {
+  transform:
+    rotate(-2deg) translateY(25px);
+}
+
+
+.pared-graciosa .obra-graciosa:nth-child(6n + 4) {
+  transform:
+    rotate(4.5deg) translateY(-5px);
+}
+
+
+.pared-graciosa .obra-graciosa:nth-child(6n + 5) {
+  transform:
+    rotate(-3deg) translateY(-30px);
+}
+
+
+.pared-graciosa .obra-graciosa:nth-child(6n + 6) {
+  transform:
+    rotate(2deg) translateY(20px);
+}
+
+
+/* ================================================== */
+/* EFECTO AL PASAR EL RATÓN */
+/* ================================================== */
+
+.pared-graciosa .obra-graciosa:hover {
+  transform:
+    rotate(0deg) translateY(-12px) scale(1.045);
+
+  z-index: 10;
+}
+
+
+/* ================================================== */
+/* POLAROID */
+/* ================================================== */
+
+/*
+  Aunque JS les haya puesto
+  marco-1, marco-2, etc.,
+  aquí los anulamos todos.
+*/
+
+.obra-graciosa .marco,
+.obra-graciosa .marco-1,
+.obra-graciosa .marco-2,
+.obra-graciosa .marco-3,
+.obra-graciosa .marco-4,
+.obra-graciosa .marco-5,
+.obra-graciosa .marco-6 {
+
+  position: relative;
+
+  padding:
+    13px 13px 48px;
+
+  background:
+    linear-gradient(145deg,
+      #fffef9,
+      #eee9dd);
+
+  border: none;
+
+  border-radius: 1px;
+
+  box-shadow:
+    0 15px 28px rgba(66, 52, 39, 0.28),
+
+    0 3px 7px rgba(66, 52, 39, 0.16);
+
+  transform: none;
+}
+
+
+/*
+  Evitamos que el hover general
+  del museo mueva el marco.
+*/
+
+.obra-graciosa:hover .marco {
+  transform: none;
+}
+
+
+/* Quitamos línea interior del marco */
+
+.obra-graciosa .marco::before {
+  display: none;
+}
+
+
+/* ================================================== */
+/* CINTA ADHESIVA */
+/* ================================================== */
+
+.obra-graciosa .marco::after {
+  content: "";
+
+  position: absolute;
+
+  width: 76px;
+  height: 24px;
+
+  left: 50%;
+  top: -13px;
+
+  transform:
+    translateX(-50%) rotate(-2deg);
+
+  background:
+    rgba(231,
+      215,
+      173,
+      0.78);
+
+  border-left:
+    1px solid rgba(130, 110, 76, 0.17);
+
+  border-right:
+    1px solid rgba(130, 110, 76, 0.17);
+
+  box-shadow:
+    0 2px 5px rgba(65, 48, 32, 0.10);
+
+  z-index: 8;
+}
+
+
+/*
+  Cambiamos la cinta de algunas.
+*/
+
+.obra-graciosa:nth-child(3n + 2) .marco::after {
+  left: 20%;
+
+  transform:
+    translateX(-50%) rotate(-8deg);
+
+  background:
+    rgba(174,
+      217,
+      213,
+      0.72);
+}
+
+
+.obra-graciosa:nth-child(3n + 3) .marco::after {
+  left: 79%;
+
+  transform:
+    translateX(-50%) rotate(8deg);
+
+  background:
+    rgba(239,
+      196,
+      198,
+      0.72);
+}
+
+
+/* ================================================== */
+/* FOTO DENTRO DE POLAROID */
+/* ================================================== */
+
+.obra-graciosa .paspartu {
+
+  padding: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+}
+
+
+.obra-graciosa .media-contenedor,
+.obra-graciosa.destacada .media-contenedor {
+
+  width: 100%;
+
+  height:
+    clamp(250px,
+      27vw,
+      350px);
+
+  background: #e4dfd7;
+
+  box-shadow:
+    inset 0 0 7px rgba(44, 39, 33, 0.18);
+}
+
+
+.obra-graciosa .media-contenedor img,
+.obra-graciosa .media-contenedor video {
+
+  background:
+    #e5e0d8;
+
+  object-fit: contain;
+}
+
+
+/* ================================================== */
+/* PEQUEÑO CORAZÓN EN ALGUNAS POLAROIDS */
+/* ================================================== */
+
+.obra-graciosa:nth-child(4n + 1) .paspartu::after {
+
+  content: "♥";
+
+  position: absolute;
+
+  right: -3px;
+  bottom: -38px;
+
+  color:
+    #11aeb5;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 18px;
+
+  transform:
+    rotate(8deg);
+}
+
+
+/* ================================================== */
+/* FICHA FOTOS GRACIOSAS */
+/* ================================================== */
+
+.obra-graciosa .ficha {
+
+  width: 92%;
+
+  margin-top: 18px;
+
+  padding:
+    13px 15px;
+
+  color: #353938;
+
+  background:
+    rgba(255,
+      253,
+      246,
+      0.78);
+
+  border:
+    1px dashed rgba(57,
+      112,
+      111,
+      0.38);
+
+  box-shadow:
+    0 5px 13px rgba(70, 56, 40, 0.12);
+
+  transform:
+    rotate(-0.5deg);
+}
+
+
+.obra-graciosa:nth-child(even) .ficha {
+  transform:
+    rotate(0.7deg);
+}
+
+
+.obra-graciosa .numero-obra {
+  color:
+    #008f96;
+}
+
+
+.obra-graciosa .fecha-obra {
+  color:
+    #77726b;
+}
+
+
+.obra-graciosa .nombre-obra {
+  color:
+    #273c3d;
+
+  font-size:
+    20px;
+}
+
+
+.obra-graciosa .descripcion-obra {
+  color:
+    #69655f;
+}
+
+
+/* ================================================== */
+/* DECORACIÓN DE FONDO */
+/* ================================================== */
+
+/*
+  Añadimos pequeños puntos
+  para que no parezca una pared
+  completamente vacía.
+*/
+
+.pared-graciosa::before {
+  content: "♥   ✦   ♥   ✦   ♥";
+
+  position: absolute;
+
+  top: -30px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  color:
+    rgba(0,
+      143,
+      150,
+      0.22);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 17px;
+
+  letter-spacing: 20px;
+
+  white-space: nowrap;
+}
+
+
+/* ================================================== */
+/* FINAL */
+/* ================================================== */
+
+.final {
+  min-height: 55vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    80px 25px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(ellipse at center,
+      rgba(66, 206, 210, 0.10),
+      transparent 45%),
+
+    #07171a;
+}
+
+
+.corazon-final {
+  margin-bottom: 22px;
+
+  color: #42ced2;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 35px;
+}
+
+
+.final p {
+  max-width: 600px;
+
+  color:
+    rgba(244,
+      238,
+      226,
+      0.72);
+
+  font-size:
+    clamp(22px,
+      3vw,
+      42px);
+
+  line-height: 1.3;
+
+  font-style: italic;
+}
+
+
+/* ================================================== */
+/* TABLET */
+/* ================================================== */
+
+@media (max-width: 1000px) {
+
+  .pared-graciosa {
+    grid-template-columns:
+      repeat(2,
+        minmax(0, 1fr));
+
+    gap:
+      85px 55px;
+  }
+
+}
+
+
+/* ================================================== */
+/* MÓVIL */
+/* ================================================== */
+
+@media (max-width: 700px) {
+
+  .volver {
+    left: 22px;
+    top: 24px;
+
+    font-size: 11px;
+  }
+
+
+  .portada {
+    min-height: 80vh;
+
+    padding:
+      110px 22px 90px;
+  }
+
+
+  .portada h1 {
+    font-size:
+      clamp(52px,
+        17vw,
+        78px);
+  }
+
+
+  .sala {
+    padding:
+      75px 22px 100px;
+  }
+
+
+  .cabecera-sala {
+    margin-bottom: 65px;
+  }
+
+
+  .pared-obras {
+    grid-template-columns: 1fr;
+
+    gap: 95px;
+  }
+
+
+  .obra,
+  .obra.destacada {
+    grid-column: auto;
+
+    width: 100%;
+
+    max-width: 500px;
+  }
+
+
+  .media-contenedor,
+  .destacada .media-contenedor {
+
+    height:
+      min(115vw,
+        520px);
+  }
+
+
+  .paspartu {
+    padding: 12px;
+  }
+
+
+  .marco-1 {
+    padding: 10px;
+  }
+
+
+  .marco-2 {
+    padding: 11px;
+  }
+
+
+  .marco-3 {
+    padding: 7px;
+  }
+
+
+  .marco-4 {
+    padding: 10px;
+  }
+
+
+  .marco-5 {
+    padding: 8px;
+  }
+
+
+  .marco-6 {
+    padding: 6px;
+  }
+
+
+  .ficha {
+    width: 90%;
+
+    padding:
+      14px 15px;
+  }
+
+
+  .nombre-obra {
+    font-size: 20px;
+  }
+
+
+  .hito {
+    min-height: 65vh;
+
+    padding:
+      90px 25px;
+  }
+
+
+  /* ================================================== */
+  /* SALA GRACIOSA EN MÓVIL */
+  /* ================================================== */
+
+  .sala-graciosa {
+    padding:
+      85px 24px 120px;
+  }
+
+
+  .pared-graciosa {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 75px;
+
+    padding-top: 25px;
+  }
+
+
+  /*
+    En móvil bajamos bastante
+    las inclinaciones para que
+    sea cómodo verlo.
+  */
+
+  .pared-graciosa .obra-graciosa:nth-child(6n + 1) {
+    transform:
+      rotate(-2deg);
+  }
+
+
+  .pared-graciosa .obra-graciosa:nth-child(6n + 2) {
+    transform:
+      rotate(1.5deg);
+  }
+
+
+  .pared-graciosa .obra-graciosa:nth-child(6n + 3) {
+    transform:
+      rotate(-1deg);
+  }
+
+
+  .pared-graciosa .obra-graciosa:nth-child(6n + 4) {
+    transform:
+      rotate(2deg);
+  }
+
+
+  .pared-graciosa .obra-graciosa:nth-child(6n + 5) {
+    transform:
+      rotate(-1.5deg);
+  }
+
+
+  .pared-graciosa .obra-graciosa:nth-child(6n + 6) {
+    transform:
+      rotate(1deg);
+  }
+
+
+  .pared-graciosa .obra-graciosa:hover {
+    transform:
+      translateY(-5px) scale(1.015);
+  }
+
+
+  .obra-graciosa .marco {
+
+    padding:
+      11px 11px 42px;
+  }
+
+
+  .obra-graciosa .paspartu {
+    padding: 0;
+  }
+
+
+  .obra-graciosa .media-contenedor,
+  .obra-graciosa.destacada .media-contenedor {
+
+    height:
+      min(105vw,
+        440px);
+  }
+
+
+  .pared-graciosa::before {
+    font-size: 13px;
+
+    letter-spacing: 10px;
+  }
+
+  /* ================================================== */
+  /* AJUSTES FINALES MÓVIL */
+  /* ================================================== */
+
+  .portada {
+    min-height: 100svh;
+  }
+
+
+  .portada h1 {
+    line-height: 0.95;
+  }
+
+
+  .intro {
+    width: 100%;
+
+    max-width: 340px;
+
+    font-size: 15px;
+  }
+
+
+  .sala {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+
+  .cabecera-sala {
+    margin-bottom: 55px;
+  }
+
+
+  .titulo-sala {
+    font-size:
+      clamp(
+        38px,
+        13vw,
+        58px
+      );
+  }
+
+
+  .subtitulo-sala {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  .ficha {
+    width: 94%;
+  }
+
+
+  .descripcion-obra {
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+
+  .hito h2 {
+    font-size:
+      clamp(
+        42px,
+        14vw,
+        68px
+      );
+  }
+
+
+  .sala-graciosa {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+}
